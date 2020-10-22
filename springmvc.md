@@ -94,3 +94,44 @@ public class WebConfig {
 
 spring IOP+Model使用逻辑：
 ![Model](/images/Model.png)
+
+11. **创建final指定的类以存储用于View和ModelAttribute的常量**
+12. **JSTL**
+    - JSP标签集合，用于各种核心的常用功能
+      -  Core tags
+      -  Formatting tags
+      -  SQL tags
+      -  XML tags
+      -  JSTL Functions
+```xml
+//pom.xml文件内
+<properties>
+  <!-- ... -->
+  <jstl.version>1.2</jstl.version>
+</properties>
+  <!-- ... -->
+<dependency>
+  <groupId>javax.servlet</groupId>
+  <artifactId>jstl</artifactId>
+  <version>${jstl.version}</version>
+</dependency>
+```
+```JSP
+JSP文件内:
+jstl tags:
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+Spring form tag:
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+```
+
+13. **@Slf4j 使用后,配合log.info()可以在运行时输出自定义的日志信息**
+14. **@RequestParam 取得从页面传回的参数，传回时的name要与参数的名称对应**
+15. **jsp文件使用定义的静态参数**
+
+```jsp
+<%@ page import ="teng.springmvc.util.Mappings" %>
+```
+16. 项目结构
+
+![structure](/images/structure.png)
